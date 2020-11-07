@@ -1,7 +1,7 @@
 version: '3'
-services:
-  image: main-scores-image
-  web:  
+services:  
+  web:
+    image: "main-scores-image"
     ports:
      - "8777:5000"
   volumes:
