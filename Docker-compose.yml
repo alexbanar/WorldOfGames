@@ -1,6 +1,7 @@
 version: '3'
 services:
   image: "main-scores-image"
+web:  
   ports:
    - "8777:5000"
   volumes:
