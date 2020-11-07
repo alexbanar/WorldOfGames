@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+    stages {
+        stage('checkout') {
+            steps {
+                script {
+                    properties([pipelineTriggers([pollSCM('* * * * *')])])
+                }
+                git 'https://github.com/alexbanar/WorldOfGames.git'
+            }
+        }
+        stage('run python') {
+            steps {
+                script {
+                    if (Boolean.valueOf(env.UNIX)) {
+                        sh 'docker build -t main-scores-image'
+                        sh 'docker-compose up'
+                    } else {
+                        bat 'docker build -t main-scores-image'
+                        bat 'docker-compose up'
+                    }
+                }
+            }
+        }
+    }
+}
