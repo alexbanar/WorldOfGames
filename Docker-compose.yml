@@ -1,9 +1,11 @@
 version: '3'
-services:  
+services: 
+  main-scores-image:
+    image: main-scores-image:staging
   web:
     ports:
      - "8777:5000"
     volumes:
      - .:/code
 flask:
-  image: "main-scores-image"
+  
