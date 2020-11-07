@@ -6,7 +6,7 @@ pipeline {
                 script {
                     properties([pipelineTriggers([pollSCM('* * * * *')])])
                 }
-                git 'https://github.com/alexbanar/WorldOfGames.git'
+                git branch: 'main', url: "https://github.com/alexbanar/WorldOfGames.git"
             }
         }
         stage('run python') {
