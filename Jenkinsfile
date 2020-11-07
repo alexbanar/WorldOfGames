@@ -9,7 +9,7 @@ pipeline {
                 git branch: 'main', url: "https://github.com/alexbanar/WorldOfGames.git"
             }
         }
-        stage('run python') {
+        stage('build') {
             steps {
                 script {
                     if (Boolean.valueOf(env.UNIX)) {
