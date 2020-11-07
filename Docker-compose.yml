@@ -1,8 +1,9 @@
 version: '3'
 services:  
   web:
-    image: "main-scores-image"
     ports:
      - "8777:5000"
-  volumes:
-   - .:/code
+    volumes:
+     - .:/code
+flask:
+  image: "main-scores-image"
