@@ -1,5 +1,10 @@
 version: '3'
-main-scores-image:
-  image: main-scores-image:staging
+services:
+  web:
+    ports:
+      "8777:5000"
+    volumes:
+      -.:/code
+
   
   
