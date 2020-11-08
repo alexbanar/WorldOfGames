@@ -4,5 +4,5 @@ main-scores-image:
 ports:
   "8777:5000"
 volumes:
-  - .:/code
+  .:/code
   
