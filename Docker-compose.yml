@@ -1,10 +1,11 @@
-version: '3.1'
+version: '3'
 services:
   web:
     ports:
       "8777:5000"
     volumes:
       -.:/code
-
+main-scores-image:
+  image: main-scores-image:staging
   
   
