@@ -3,7 +3,7 @@ services:
   main-scores-image:
     image: main-scores-image:staging
   ports:
-   - "8777:5000"
+    "8777:5000"
   volumes:
    - .:/code
   
