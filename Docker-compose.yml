@@ -3,8 +3,5 @@ services:
   app:
     main-scores-image:
       image: main-scores-image:staging
-  ports:
-    "8777:5000"
-  volumes:
-    -.:/code
+  
   
