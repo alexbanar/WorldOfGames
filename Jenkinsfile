@@ -34,11 +34,13 @@ pipeline {
                   dir('./test/') {
                     //sh 'python e2e.py'  
                      sh 'docker build -t test-scores-service-image' 
+                     sh 'docker-compose up'
                  
              } else {
                  dir('.\\test\\') {
                         //bat 'python e2e.py'
                     bat 'docker build -t test-scores-service-image'
+                    bat 'docker-compose up'
              }
          }                    
      }    
