@@ -2,5 +2,5 @@ version: '3'
 services:
   web:
     build: .
-    expose:
-     - "8777"
+    ports:
+      - "8777:5000"
