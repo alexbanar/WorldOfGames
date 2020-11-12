@@ -13,10 +13,11 @@ pipeline {
             steps {
                 script {
                    if (Boolean.valueOf(env.UNIX)) {
+                        sh 'docker kill main-scores-image'
                         sh 'docker-compose up --build'
                     } else {
+                        bat 'docker kill main-scores-image'
                         bat 'docker-compose up --build'
-                    }
                 }
             }
         }
