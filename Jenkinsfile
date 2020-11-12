@@ -15,9 +15,12 @@ pipeline {
                    if (Boolean.valueOf(env.UNIX)) {
                         sh 'docker kill main-scores-image'
                         sh 'docker-compose up --build'
+                        sh 'docker kill main-scores-image'
+                       
                     } else {
-                        bat 'docker kill main-scores-image'
+                        bat 'docker build -t main-scores-image'
                         bat 'docker-compose up --build'
+                        bat 'docker kill main-scores-image'
                 }
             }
         }
