@@ -12,12 +12,10 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                    if (Boolean.valueOf(env.UNIX)) {
-                        sh 'docker build -t main-scores-image .'
-                        sh 'docker-compose up'
+                   if (Boolean.valueOf(env.UNIX)) {
+                        sh 'docker-compose up --build'
                     } else {
-                        bat 'docker build -t main-scores-image .'
-                        bat 'docker-compose up'
+                        bat 'docker-compose up --build'
                     }
                 }
             }
