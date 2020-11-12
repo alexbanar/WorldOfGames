@@ -1,1 +1,1 @@
-# WorldOfGames3
+# WorldOfGames
