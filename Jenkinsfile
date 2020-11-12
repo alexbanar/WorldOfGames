@@ -23,15 +23,23 @@ pipeline {
                         bat 'docker-compose up'
                         //bat 'docker-compose up --build'
                         //bat 'docker kill main-scores-image'
-                }
-            }
-        }
-    }
-    stage('test') {
-        steps {
-            dir('./') {
-                bat 'python First.py'
-            }
-        }
-    }    
+                   }
+              }
+          }
+     }
+     stage('test') {
+       steps {
+          script {
+             if (Boolean.valueOf(env.UNIX)) {
+                  dir('./test/') {
+                    //sh 'python e2e.py'  
+                     sh 'docker build -t test-scores-service-image' 
+                 
+             } else {
+                 dir('.\\test\\') {
+                        //bat 'python e2e.py'
+                    bat 'docker build -t test-scores-service-image'
+             }
+         }                    
+     }    
 }
