@@ -3,7 +3,8 @@ services:
   web:
     image: main-scores-image
     build: .
-    #ports:
-      #- "8777:5000" 
-    expose: 
-      - "8777"
+    ports:
+      - "8777:5000" 
+    #expose: 
+      #- "8777"
+      #- 8777
