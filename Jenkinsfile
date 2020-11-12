@@ -4,7 +4,7 @@ pipeline {
         stage('checkout') {
             steps {
                 script {
-                    properties([pipelineTriggers([pollSCM('H/30 * * * *')])])
+                    //properties([pipelineTriggers([pollSCM('H/30 * * * *')])])
                 }
                 git branch: 'main', url: "https://github.com/alexbanar/WorldOfGames.git"
             }
@@ -27,4 +27,11 @@ pipeline {
             }
         }
     }
+    stage('test') {
+        steps {
+            dir('./') {
+                bat 'python First.py'
+            }
+        }
+    }    
 }
