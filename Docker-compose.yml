@@ -1,6 +1,7 @@
 version: '3'
 services:
   web:
+    image: main-scores-image
     build: .
     ports:
       - "8777:5000"
