@@ -5,4 +5,5 @@ services:
     build: .
     #ports:
       #- "8777:5000" 
-    expose: 8777
+    expose: 
+      - 8777
