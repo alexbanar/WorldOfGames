@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     image: main-scores-image
-    build: .
+    #build: .
     ports:
       - "8777:5000" 
     #expose: 
