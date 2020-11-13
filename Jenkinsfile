@@ -43,8 +43,19 @@ pipeline {
                     //bat 'docker build -t test-scores-service-image'
                     //bat 'docker-compose up'
                     but "pip install selenium"
-                    def OS_exit_code = bat 'python e2e.py' 
+                    def OS_exit_code = bat 'python e2e.py'
+                    def OS_exit_code = bat(python e2e.py)
                     println("disk_size = ${disk_size}")
+                     mac = sh(script: 'python checkoutDevice.py',returnStdout: true).trim()
+                     step('Get Build Numbers') {
+                    script {
+                         def version_numbers = bat(script: 'python get_version_numbers.py', returnStdout: true)
+                         def versions_as_array = version_numbers.split('\n')
+                    }   
+                        def build_version = bat(script: '/path/to/python /path/to/build.py', returnStdout: true)
+                        //And the python script should write to STDOUT the value that you want assigned to $build_version
+            }
+        }
                      
                      
                      
