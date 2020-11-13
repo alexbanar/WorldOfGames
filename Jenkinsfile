@@ -41,7 +41,22 @@ pipeline {
                         //bat 'python e2e.py'
                     bat 'docker build -t test-scores-service-image'
                     bat 'docker-compose up'
+                    currentBuild.result = 'FAILURE'
+                    //script {
+                        error 'Test error'
+                   //}
+               try {
+                    // do something that fails
+                    //bat "exit 1"
+                    bat "exit 0"
+                    currentBuild.result = 'SUCCESS'
+                     } catch (Exception err) {
+                    currentBuild.result = 'FAILURE'
+                     }
+                     echo "RESULT: ${currentBuild.result}"
+                     }      
              }
-         }                    
+         }
+         echo "RESULT: ${currentBuild.result}"
      }    
 }
