@@ -35,16 +35,16 @@ pipeline {
                     }
                  }
            }
-           stage('test') {
-              steps {
-                script {
-                  bat 'pip install selenium'
-                  bat '.\\test\\e2e.py'
-               }    
-            }  
-          }
-     }
- }
+           //stage('test') {
+           //   steps {
+          //      script {
+          //        bat 'pip install selenium'
+           //       bat '.\\test\\e2e.py'
+          //     }    
+         //   }  
+        //  }
+    }
+}
 
         
         
@@ -72,4 +72,4 @@ pipeline {
         
         
             
-}
+
