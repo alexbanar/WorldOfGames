@@ -1,8 +1,8 @@
 pipeline {
     agent any
-        options {
-            parallelsAlwaysFailFast()  // https://stackoverflow.com/q/54698697/4480139
-       }
+        //options {
+            //parallelsAlwaysFailFast()  // https://stackoverflow.com/q/54698697/4480139
+       //}
     stages {
         stage('checkout') {
             steps {
@@ -15,8 +15,8 @@ pipeline {
         
 
 
-        stage('Parallel') {
-          parallel {
+        //stage('Parallel') {
+          //parallel {
              //stage('build') {
                  // steps {
                   //  script {
@@ -42,8 +42,8 @@ pipeline {
                   bat '.\\test\\e2e.py'
                }    
            }  
-        }
-     }
+        //}
+     //}
  }
 
         
