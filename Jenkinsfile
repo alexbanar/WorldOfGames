@@ -28,7 +28,7 @@ pipeline {
                         //bat 'docker kill main-scores-image'
                     }
             }
-        }
+       }
            //stage('test') {
            //   steps {
           //      script {
@@ -37,8 +37,8 @@ pipeline {
           //     }    
          //   }  
         //  }
-    }
-}
+   }
+ }
 
 
         
