@@ -41,9 +41,9 @@ pipeline {
                   bat 'pip install selenium'
                   bat '.\\test\\e2e.py'
                }    
-           }  
-        //}
-     //}
+            }  
+          }
+     }
  }
 
         
