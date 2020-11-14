@@ -30,7 +30,7 @@ pipeline {
      stage('test') {
        steps {
           script {
-             
+             bat '.\\test\\e2e.py'
           }    
      }    
 }
