@@ -29,13 +29,13 @@ def main_function():
 
     if scores_num_between_0_1000:
         OS_exit_code = 0
-        print("RESULT: [TEST SUCCESS]")
+       // print("RESULT: [" + TEST " + "SUCCESS" if OS_exit_code == 0 else "FAILURE]")
     else:
         OS_exit_code = -1
-        print("RESULT: [TEST FAILURE]")
-    
+        //print("RESULT: [TEST FAILURE]")
+                
+    print("RESULT: [TEST " + "SUCCESS" if OS_exit_code == 0 else "FAILURE" + "]")
     return OS_exit_code
 
-main_function()
 #rc = main_function(sys.argv[1:])
-#sys.exit(main_function())
+sys.exit(main_function())
