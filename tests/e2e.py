@@ -37,5 +37,5 @@ def main_function():
 
 main_function()
 main_function.getValue()
-//rc = main_function(sys.argv[1:])
-//sys.exit(rc)
+#rc = main_function(sys.argv[1:])
+#sys.exit(rc)
