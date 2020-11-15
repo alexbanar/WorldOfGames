@@ -18,7 +18,7 @@ def test_scores_service(app_url):
     main_scores = int(chrome_driver.find_element_by_id("score").text)
     time.sleep(20)
     chrome_driver.quit();
-    if main_scores >= 0 and main_scores <= 1000:
+    if main_scores >= 10 and main_scores <= 1000:
         return True
     else:
         return False
