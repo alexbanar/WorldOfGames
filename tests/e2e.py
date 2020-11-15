@@ -7,7 +7,6 @@ def test_scores_service(app_url):
     # options.add_experimental_option("detach", True)
     # chrome_driver = webdriver.Chrome(chrome_options=options, executable_path=r'.\\chromedriver.exe')
 
-
     global chrome_driver
     options = webdriver.ChromeOptions()
     # options.add_experimental_option("detach", True)
