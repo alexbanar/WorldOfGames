@@ -32,6 +32,7 @@ def main_function():
     else:
         OS_exit_code = -1
 
+    print("OS_exit_code =", OS_exit_code)
     return OS_exit_code
 
 main_function()
