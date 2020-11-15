@@ -23,7 +23,7 @@ def test_scores_service(app_url):
     else:
         return False
 
-def main_function():
+def main_function(arg1):
     app_url = "http://127.0.0.1:8777"
     scores_num_between_0_1000 = test_scores_service(app_url)
 
