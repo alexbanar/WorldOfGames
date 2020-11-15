@@ -33,9 +33,9 @@ def main_function():
     else:
         OS_exit_code = -1
         print("RESULT: [TEST FAILURE]")
-
     
     return OS_exit_code
 
+main_function()
 #rc = main_function(sys.argv[1:])
-sys.exit(main_function())
+#sys.exit(main_function())
