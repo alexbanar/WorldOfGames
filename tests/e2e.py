@@ -35,7 +35,6 @@ def main_function():
     print("OS_exit_code =", OS_exit_code)
     return OS_exit_code
 
-main_function()
-main_function.getValue()
+main_function().getValue()
 #rc = main_function(sys.argv[1:])
 #sys.exit(rc)
