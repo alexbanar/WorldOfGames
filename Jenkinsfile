@@ -30,6 +30,7 @@ pipeline {
                         //bat "exit 1"
 
                             bat "python e2e.py"
+                            bat "exit -1"
                            currentBuild.result = 'SUCCESS'
                          } catch (Exception err) {
                             currentBuild.result = 'FAILURE'
