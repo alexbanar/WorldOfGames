@@ -21,9 +21,11 @@ def test_scores_service(app_url):
 
     # chrome_driver = webdriver.Chrome(executable_path="D:\\Python\\PycharmProjects\\chromedriver.exe")
     chrome_driver.get(app_url)
+    chrome_driver.refresh()
     chrome_driver.implicitly_wait(10)
     main_scores = int(chrome_driver.find_element_by_id("score").text)
     time.sleep(20)
+    chrome_driver.quit();
     if main_scores >= 0 and main_scores <= 1000:
         return True
     else:
