@@ -31,7 +31,7 @@ pipeline {
           //  }
             stage('test') {
                 steps {
-                    dir ('.\\'){
+                    dir ('.\\tests'){
                         bat 'pip install selenium'
                         bat 'python e2e.py'
                     }
