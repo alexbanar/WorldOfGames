@@ -10,37 +10,22 @@ pipeline {
             }
         }
         
-
-
-       //stage('build') {
-       //     steps {
-          //              bat 'docker build -t main-scores-image .'
-          //              bat 'docker-compose up'
-          //              //bat 'docker-compose up --build'
-          //              //bat 'docker kill main-scores-image'
-            //}
-      // }
-           //stage('build') {
-              //steps {
-                   // bat 'docker build -t main-scores-image .'
-      //            bat 'docker-compose up'
-      //            //bat 'docker-compose up --build'
-      //            //bat 'docker kill main-scores-image'
-
-               //}
-          //  }
-            stage('test') {
-                steps {
-                    dir ('.\\tests'){
-                        bat 'pip install selenium'
-                        bat 'python e2e.py'
-                    }
+       stage('build') {
+            steps {
+                bat 'docker build -t main-scores-image .'
+                bat 'docker-compose up -d'
+                //bat 'docker-compose up --build'
+                //bat 'docker kill main-scores-image'
+           }
+       }
+          
+       stage('test') {
+            steps {
+                dir ('.\\tests'){
+                    bat 'pip install selenium'
+                    bat 'python e2e.py'
                 }
-            }
-        //}
-            //stage('test') {
-            //      bat 'pip install selenium'
-            //      bat 'python .\\test\\e2e.py'
-            //}
-    }
+           }
+      }
+   }
 }
