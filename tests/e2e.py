@@ -13,6 +13,7 @@ def test_scores_service(app_url):
     options.add_argument("--window-size=480,320")
     chrome_driver = webdriver.Chrome(options=options, executable_path='.\\chromedriver.exe')
     chrome_driver.get(app_url)
+    chrome_driver.set_window_size(480,320)
     chrome_driver.implicitly_wait(10)
     main_scores = int(chrome_driver.find_element_by_id("score").text)
     time.sleep(20)
