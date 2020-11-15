@@ -29,7 +29,7 @@ pipeline {
                         // do something that fails
                         //bat "exit 1"
 
-                            def exit_code = bat("python e2e.py")
+                            def exit_code = bat "python e2e.py"
                             echo ${exit_code}
                             currentBuild.result = 'SUCCESS'
                          } catch (Exception err) {
