@@ -33,7 +33,7 @@ pipeline {
                         //def exit_code22
                     //script {
                             def exit_code22 = bat("python e2e.py")
-                            bat "echo '${exit_code22}'"
+                            echo '${exit_code22}'
 }
                             //currentBuild.result = 'SUCCESS'
                          //} catch (Exception err) {
