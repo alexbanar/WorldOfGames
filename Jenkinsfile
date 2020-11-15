@@ -25,7 +25,7 @@ pipeline {
                 dir ('.\\tests'){
                     bat 'pip install selenium'
                     //exit_code = bat(script: 'python e2e.py', returnStdout: true)
-                    script { 
+                    //script { 
                         try {
                         // do something that fails
                         //bat "exit 1"
@@ -37,7 +37,7 @@ pipeline {
                             currentBuild.result = 'FAILURE'
                          }
                          echo "RESULT: ${currentBuild.result}"
-                    }
+                    //}
 
                 }
            }
