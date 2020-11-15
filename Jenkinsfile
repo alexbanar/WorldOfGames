@@ -12,7 +12,7 @@ pipeline {
         
        stage('build') {
             steps {
-                bat 'docker build -t main-scores-image .'
+                bat 'docker build -t main-scores-image-new .'
                 bat 'docker-compose up -d'
                 //bat 'docker-compose up --build'
                 //bat 'docker kill main-scores-image'
