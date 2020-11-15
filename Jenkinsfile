@@ -34,7 +34,7 @@ pipeline {
               steps {
                 script {
                   bat 'pip install selenium'
-                  bat 'python .\\test\\e2e.py'
+                  bat 'python .\\tests\\e2e.py'
                }    
             }  
           }
