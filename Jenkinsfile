@@ -25,7 +25,7 @@ pipeline {
                     bat 'pip install selenium'
                     exit_code = bat(script: 'python e2e.py', returnStdout: true)
                     //OS_exit_code=bat('python e2e.py')
-                    bat 'echo OS_exit_code'
+                    bat 'echo exit_code'
                 }
            }
       }
