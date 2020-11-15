@@ -1,4 +1,3 @@
-def exit_code=0
 pipeline {
     agent any       
     stages {
@@ -30,7 +29,7 @@ pipeline {
                         // do something that fails
                         //bat "exit 1"
 
-                            exit_code = bat("python e2e.py")
+                            def exit_code = bat("python e2e.py")
                             echo ${exit_code}
                             currentBuild.result = 'SUCCESS'
                          } catch (Exception err) {
