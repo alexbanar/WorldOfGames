@@ -19,13 +19,13 @@ pipeline {
            }
        }
           
-       //stage('test') {
-       //     steps {
-       //         dir ('.\\tests'){
-       //             bat 'pip install selenium'
-       //             bat 'python e2e.py'
-       //         }
-       //    }
-     // }
+       stage('test') {
+            steps {
+                dir ('.\\tests'){
+                    bat 'pip install selenium'
+                    bat 'python e2e.py'
+                }
+           }
+      }
    }
 }
