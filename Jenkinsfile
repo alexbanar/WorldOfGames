@@ -23,9 +23,19 @@ pipeline {
             steps {
                 dir ('.\\tests'){
                     bat 'pip install selenium'
-                    exit_code = bat(script: 'python e2e.py', returnStdout: true)
-                    //OS_exit_code=bat('python e2e.py')
-                    bat 'echo exit_code'
+                    //exit_code = bat(script: 'python e2e.py', returnStdout: true)
+                    try {
+                    // do something that fails
+                    //bat "exit 1"
+                       script { 
+                         bat "python e2e.py"
+                       }
+                       currentBuild.result = 'SUCCESS'
+                     } catch (Exception err) {
+                        currentBuild.result = 'FAILURE'
+                     }
+                     echo "RESULT: ${currentBuild.result}"
+
                 }
            }
       }
