@@ -30,7 +30,7 @@ pipeline {
                         //bat "exit 1"
 
                     bat ('python e2e.py')
-                        def exit_code=main_function().exitValue()
+                        def exit_code22=e2e.exitValue()
                     //script {
                             //def exit_code = bat "python e2e.py"
                             bat "echo '${exit_code22}'"
