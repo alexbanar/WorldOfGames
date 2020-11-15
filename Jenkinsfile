@@ -29,10 +29,10 @@ pipeline {
                         // do something that fails
                         //bat "exit 1"
 
-                    bat 'python e2e.py' 
+                    //bat 'python e2e.py' 
                         //def exit_code22
                     //script {
-                            //def exit_code = bat "python e2e.py"
+                            def exit_code22 = bat("python e2e.py")
                             bat "echo '${exit_code22}'"
 }
                             //currentBuild.result = 'SUCCESS'
