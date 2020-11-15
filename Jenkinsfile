@@ -26,17 +26,17 @@ pipeline {
                     bat 'pip install selenium'
                     //exit_code = bat(script: 'python e2e.py', returnStdout: true)
                     //script { 
-                        try {
+                        //try {
                         // do something that fails
                         //bat "exit 1"
 
                             exit_code = bat "python e2e.py"
                             echo "${exit_code}"
-                            currentBuild.result = 'SUCCESS'
-                         } catch (Exception err) {
-                            currentBuild.result = 'FAILURE'
-                         }
-                         echo "RESULT: ${currentBuild.result}"
+                            //currentBuild.result = 'SUCCESS'
+                         //} catch (Exception err) {
+                            //currentBuild.result = 'FAILURE'
+                         //}
+                        // echo "RESULT: ${currentBuild.result}"
                     //}
 
                 }
