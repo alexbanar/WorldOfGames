@@ -1,19 +1,29 @@
 
+import time
 from selenium import webdriver
 
 def test_scores_service(app_url):
-   # options = webdriver.ChromeOptions()
-# options.add_experimental_option("detach", True)
+    # options = webdriver.ChromeOptions()
+    # options.add_experimental_option("detach", True)
+    # chrome_driver = webdriver.Chrome(chrome_options=options, executable_path=r'D:\\Python\\PycharmProjects\\ChromeDriver.exe')
+
     # chrome_driver = webdriver.Chrome(chrome_options=options, executable_path=r'.\\chromedriver.exe')
+
 
     global chrome_driver
     options = webdriver.ChromeOptions()
     # options.add_experimental_option("detach", True)
     options.add_argument("--window-size=480,320")
+#     chrome_driver = webdriver.Chrome(options=options, executable_path="D:\\Python\\PycharmProjects\\chromedriver.exe")
+
     chrome_driver = webdriver.Chrome(options=options, executable_path=".\\chromedriver.exe")
+
+
+    # chrome_driver = webdriver.Chrome(executable_path="D:\\Python\\PycharmProjects\\chromedriver.exe")
     chrome_driver.get(app_url)
     chrome_driver.implicitly_wait(10)
     main_scores = int(chrome_driver.find_element_by_id("score").text)
+    time.sleep(20)
     if main_scores >= 0 and main_scores <= 1000:
         return True
     else:
