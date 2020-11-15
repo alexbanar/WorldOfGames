@@ -23,7 +23,7 @@ def test_scores_service(app_url):
     else:
         return False
 
-def main_function(arg1):
+def main_function():
     app_url = "http://127.0.0.1:8777"
     scores_num_between_0_1000 = test_scores_service(app_url)
 
@@ -35,6 +35,7 @@ def main_function(arg1):
     print("OS_exit_code =", OS_exit_code)
     return OS_exit_code
 
-#main_function()
-rc = main_function(sys.argv[1:])
-sys.exit(rc)
+main_function()
+main_function.getValue()
+//rc = main_function(sys.argv[1:])
+//sys.exit(rc)
