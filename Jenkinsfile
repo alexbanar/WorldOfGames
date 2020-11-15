@@ -23,7 +23,7 @@ pipeline {
             steps {
                 dir ('.\\tests'){
                     bat 'pip install selenium'
-                    OS_exit_code=bat('python e2e.py')
+                    OS_exit_code=bat('.\\python e2e.py')
                     bat 'echo OS_exit_code'
                 }
            }
